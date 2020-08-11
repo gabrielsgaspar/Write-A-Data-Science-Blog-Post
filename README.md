@@ -5,7 +5,7 @@ Write a Data Science Blog Post
 [![Version](https://img.shields.io/badge/version-dev-brightgreen)](https://github.com/LongRunGrowth/europeana_data)
 [![Build](https://img.shields.io/badge/build-broken-lightgrey)]()
 [![Coverage](https://img.shields.io/badge/coverage-0%25-lightgrey)]()
-[![BSD License](http://img.shields.io/badge/license-MIT-green.svg)](https://github.com/LongRunGrowth/europeana_data/blob/master/LICENSE.md)
+[![BSD License](http://img.shields.io/badge/license-MIT-green.svg)](https://github.com/gabrielsgaspar/Write-A-Data-Science-Blog-Post/blob/master/LICENSE.md)
 
 ## Table of Contents
 - [1. About](#about)
@@ -24,3 +24,4 @@ Write a Data Science Blog Post
 
 <a name="license"></a>
 ## 4. License
+This project is licensed under the MIT License. See [LICENSE.md](LICENSE.md) file for further details.
