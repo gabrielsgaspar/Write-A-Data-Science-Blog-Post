@@ -1,3 +1,5 @@
+googledrivedownloader
+itertools
 matplotlib
 numpy
 pandas
