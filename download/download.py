@@ -3,7 +3,7 @@
 """
 The purpose of this script is to programatically download data
 from the Stack Overflow Annual Developer Survey and save it in
-the data folder
+the data folder as zip files
 """
 
 # Import libraries
