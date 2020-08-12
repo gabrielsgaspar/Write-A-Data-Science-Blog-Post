@@ -7,8 +7,11 @@ the data folder as zip files
 """
 
 # Import libraries
+import csv
 import itertools
 from google_drive_downloader import GoogleDriveDownloader as gdd
+from io import TextIOWrapper
+from zipfile import ZipFile
 
 # Define function to download data
 def get_data(path, ids, names):
@@ -18,6 +21,16 @@ def get_data(path, ids, names):
     # Donwload and save data
     for (id, name) in zip(ids, names):
         gdd.download_file_from_google_drive(file_id = id, dest_path = path + name, unzip = False)
+
+# Define function to unzip and save csv
+def unzip_csv():
+    '''Unzips files extracted in get_data function,
+       extracts only relevant csvs and saves them
+    '''
+    # Open zip files
+    with ZipFile('zipfile here') as zf:
+        file = csv.reader(TextIOWrapper(infile, 'utf-8'))
+        # Save files
 
 if __name__ == '__main__':
     # Set path where data will be saved
