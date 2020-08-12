@@ -1,7 +1,10 @@
+csv
 googledrivedownloader
+io
 itertools
 matplotlib
 numpy
 pandas
 requests
 seaborn
+zipfile
