@@ -58,8 +58,12 @@ def remove(ext):
             os.remove(os.path.join(dir, file))
 
 if __name__ == '__main__':
-    # Change to data directory
-    os.chdir('../data')
+    # Create data directory if it doesn't exist and change directory
+    if not os.path.exists('../data'):
+        os.makedirs('data')
+        os.chdir('../data')
+    else:
+        os.chdir('../data')
     # Set file ids
     ids = ['1dfGerWeWkcyQ9GX9x20rdSGj7WtEpzBB', '1QOmVDpd8hcVYqqUXDXf68UMDWQZP0wQV',
             '1_9On2-nsBQIw3JiY43sWbrF8EjrqrR4U', '0B6ZlG_Eygdj-c1kzcmUxN05VUXM',
