@@ -23,7 +23,8 @@ def get_data(ids, zip_names):
     path = os.getcwd() + '/'
     # Download and save zip files
     for (id, name) in zip(ids, zip_names):
-        gdd.download_file_from_google_drive(file_id = id, dest_path = path + name, unzip = False)
+        gdd.download_file_from_google_drive(file_id = id, dest_path = path +
+                                            name, unzip = False)
 
 # Define function to unzip and save csv
 def unzip_csv(zip_names, csv_names, new_names):
@@ -35,7 +36,8 @@ def unzip_csv(zip_names, csv_names, new_names):
         print('Unzipping', zip_name, '...', end = '\r')
         with ZipFile(zip_name) as zf:
             with zf.open(csv_name, 'r') as infile:
-                file = csv.reader(TextIOWrapper(infile, encoding = 'utf-8', errors = 'ignore'))
+                file = csv.reader(TextIOWrapper(infile, encoding = 'utf-8',
+                                    errors = 'ignore'))
                 # Open as writer
                 with open(new_name, 'w') as new_file:
                     writer = csv.writer(new_file)
@@ -65,21 +67,28 @@ if __name__ == '__main__':
     else:
         os.chdir('../data')
     # Set file ids
-    ids = ['1dfGerWeWkcyQ9GX9x20rdSGj7WtEpzBB', '1QOmVDpd8hcVYqqUXDXf68UMDWQZP0wQV',
-            '1_9On2-nsBQIw3JiY43sWbrF8EjrqrR4U', '0B6ZlG_Eygdj-c1kzcmUxN05VUXM',
-            '0B0DL28AqnGsrV0VldnVIT1hyb0E', '0B0DL28AqnGsra1psanV1MEdxZk0',
-            '0B0DL28AqnGsrempjMktvWFNaQzA', '0B0DL28AqnGsrenpPNTc5UE1PYW8',
-            '0B0DL28AqnGsrX3JaZWVwWEpHNWM', '0Bx0LyhBTBZQgUGVYaGx3SzdUQ1U']
+    ids = ['1dfGerWeWkcyQ9GX9x20rdSGj7WtEpzBB',
+            '1QOmVDpd8hcVYqqUXDXf68UMDWQZP0wQV',
+            '1_9On2-nsBQIw3JiY43sWbrF8EjrqrR4U',
+            '0B6ZlG_Eygdj-c1kzcmUxN05VUXM', '0B0DL28AqnGsrV0VldnVIT1hyb0E',
+            '0B0DL28AqnGsra1psanV1MEdxZk0', '0B0DL28AqnGsrempjMktvWFNaQzA',
+            '0B0DL28AqnGsrenpPNTc5UE1PYW8', '0B0DL28AqnGsrX3JaZWVwWEpHNWM',
+            '0Bx0LyhBTBZQgUGVYaGx3SzdUQ1U']
     # Set file zip names
-    zip_names = ['developer_survey_2020.zip', 'developer_survey_2019.zip', 'developer_survey_2018.zip',
-                'developer_survey_2017.zip', 'developer_survey_2016.zip', 'developer_survey_2015.zip',
-                'developer_survey_2014.zip', 'developer_survey_2013.zip', 'developer_survey_2012.zip',
-                'developer_survey_2011.zip']
+    zip_names = ['developer_survey_2020.zip', 'developer_survey_2019.zip',
+                'developer_survey_2018.zip', 'developer_survey_2017.zip',
+                'developer_survey_2016.zip', 'developer_survey_2015.zip',
+                'developer_survey_2014.zip', 'developer_survey_2013.zip',
+                'developer_survey_2012.zip', 'developer_survey_2011.zip']
     # Set name of csv files
-    csv_names = ['survey_results_public.csv', 'survey_results_public.csv', 'survey_results_public.csv',
-                'survey_results_public.csv', '2016 Stack Overflow Survey Results/2016 Stack Overflow Survey Responses.csv',
-                '2015 Stack Overflow Developer Survey Responses.csv', '2014 Stack Overflow Survey Responses.csv',
-                '2013 Stack Overflow Survey Responses.csv', '2012 Stack Overflow Survey Results.csv', '2011 Stack Overflow Survey Results.csv']
+    csv_names = ['survey_results_public.csv', 'survey_results_public.csv',
+                'survey_results_public.csv', 'survey_results_public.csv',
+                '2016 Stack Overflow Survey Results/2016 Stack Overflow Survey Responses.csv',
+                '2015 Stack Overflow Developer Survey Responses.csv',
+                '2014 Stack Overflow Survey Responses.csv',
+                '2013 Stack Overflow Survey Responses.csv',
+                '2012 Stack Overflow Survey Results.csv',
+                '2011 Stack Overflow Survey Results.csv']
     # Set new csv names
     new_names = ['survey_2020.csv', 'survey_2019.csv', 'survey_2018.csv',
                 'survey_2017.csv', 'survey_2016.csv', 'survey_2015.csv',
