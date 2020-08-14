@@ -61,11 +61,11 @@ def remove(ext):
 
 if __name__ == '__main__':
     # Create data directory if it doesn't exist and change directory
-    if not os.path.exists('../data'):
-        os.makedirs('data')
-        os.chdir('../data')
+    if not os.path.exists('../data/survey'):
+        os.makedirs('../data/survey')
+        os.chdir('../data/survey')
     else:
-        os.chdir('../data')
+        os.chdir('../data/survey')
     # Set file ids
     ids = ['1dfGerWeWkcyQ9GX9x20rdSGj7WtEpzBB',
             '1QOmVDpd8hcVYqqUXDXf68UMDWQZP0wQV',
