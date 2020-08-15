@@ -10,14 +10,14 @@ import requests
 
 # Define function to download shapefiles
 def download_shape(path):
-    # TODO
-
+    # http://gisco-services.ec.europa.eu/distribution/v2/countries/download/ref-countries-2020-01m.shp.zip
+    # https://international.ipums.org/international/gis.shtml
 
 if __main__ == '__main__':
     # Create data directory if it doesn't exist and change directory
-    if not os.path.exists('../data/shapefiles'):
-        os.makedirs('../data/shapefiles')
-        os.chdir('../data/shapefiles')
+    if not os.path.exists('../data/shapefile'):
+        os.makedirs('../data/shapefile')
+        os.chdir('../data/shapefile')
     else:
-        os.chdir('../data/shapefiles')
+        os.chdir('../data/shapefile')
     download_shape()
