@@ -17,7 +17,7 @@ def download_shape(path):
     '''
     url = 'https://international.ipums.org/international/resources/gis/IPUMSI_world_release2017.zip'
     r = requests.get(url)
-    open = (str(path + '/shapes.zip'), 'wb').write(r.content)
+    open(str(path + '/shapes.zip'), 'wb').write(r.content)
 
 # Define function to unzip file
 def unzip_shp(zip_name, shp_name):
