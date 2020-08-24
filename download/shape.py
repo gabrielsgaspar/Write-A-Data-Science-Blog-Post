@@ -52,11 +52,14 @@ if __main__ == '__main__':
         os.chdir('../data/shapefile')
     else:
         os.chdir('../data/shapefile')
+    # Set variables
+    zip_name = 'shapes.zip'
+    shp_name = 'world_countries_2017.shp'
     # Get working directory
     path = str(os.getcwd())
     # Call function to download files
     download_shape(path)
     # Call functio to extract data
-    unzip_shp(arguments)
+    unzip_shp(zip_name, shp_name)
     # Delete zip files
     remove('.zip')
