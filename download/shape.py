@@ -20,16 +20,17 @@ def download_shape(url, zip_name):
         file.write(r.content)
 
 # Define function to unzip file
-def unzip_shp(zip_name, shp_name):
+def unzip_file(zip_name, file_names):
     '''Unizps files from download_shape function, extracts only the shp file
        and saves them
     '''
     # Print progress
     print('Unzipping', zip_name, '...', end = '\r')
     # Open zipfile and get only shapefile
-    with ZipFile(zip_name) as zf:
-        with open(shp_name, 'wb') as f:
-            f.write(zf.read(shp_name))
+    for file in file_names:
+        with ZipFile(zip_name) as zf:
+            with open(file, 'wb') as f:
+                f.write(zf.read(file))
 
 # Define function to delete zip files
 def remove(ext):
@@ -55,10 +56,13 @@ if __name__ == '__main__':
     # Set variables
     url = 'https://international.ipums.org/international/resources/gis/IPUMSI_world_release2017.zip'
     zip_name = 'shapes.zip'
-    shp_name = 'world_countries_2017.shp'
+    file_names = ['world_countries_2017.CPG', 'world_countries_2017.dbf',
+                  'world_countries_2017.prj', 'world_countries_2017.sbn',
+                  'world_countries_2017.sbx', 'world_countries_2017.shp',
+                  'world_countries_2017.shp.xml', 'world_countries_2017.shx']
     # Call function to download files
     download_shape(url, zip_name)
     # Call function to extract data
-    unzip_shp(zip_name, shp_name)
+    unzip_file(zip_name, file_names)
     # Delete zip files
     remove('.zip')
