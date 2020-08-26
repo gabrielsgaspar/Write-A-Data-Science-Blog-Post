@@ -66,3 +66,5 @@ if __name__ == '__main__':
     unzip_file(zip_name, file_names)
     # Delete zip files
     remove('.zip')
+    # Back to data
+    os.chdir('..')

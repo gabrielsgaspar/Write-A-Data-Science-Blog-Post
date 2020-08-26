@@ -100,3 +100,5 @@ if __name__ == '__main__':
     unzip_csv(zip_names, csv_names, new_names)
     # Delete zip files
     remove('.zip')
+    # Back to data
+    os.chdir('..')
