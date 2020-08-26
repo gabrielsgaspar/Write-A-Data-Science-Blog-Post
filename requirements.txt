@@ -1,10 +1,12 @@
 csv
+geopandas
 googledrivedownloader
 io
 itertools
 matplotlib
 numpy
 pandas
+pycountry
 requests
 seaborn
 zipfile
