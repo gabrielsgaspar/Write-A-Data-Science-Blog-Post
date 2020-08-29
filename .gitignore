@@ -1,4 +1,3 @@
-data/*
 .DS_Store
 *.env
 notebook/.ipynb_checkpoints
